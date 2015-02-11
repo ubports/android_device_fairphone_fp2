@@ -22,10 +22,10 @@ PRODUCT_DEVICE := fairphone
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8974/audio_policy.conf:system/etc/audio_policy.conf \
-    device/qcom/msm8974/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/qcom/msm8974/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msm8974/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
+    device/fairphone_devices/fairphone/audio_policy.conf:system/etc/audio_policy.conf \
+    device/fairphone_devices/fairphone/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/fairphone_devices/fairphone/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/fairphone_devices/fairphone/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
