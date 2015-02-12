@@ -140,3 +140,6 @@ ro.hwui.text_large_cache_height=1024
 
 #disable dsp gapless mode by default
 audio.offload.gapless.enabled=false
+
+#enable dsds
+persist.radio.multisim.config=dsds
