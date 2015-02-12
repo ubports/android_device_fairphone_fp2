@@ -126,3 +126,5 @@ PRODUCT_BOOT_JARS += qcmediaplayer \
                      qsb-port \
                      vcard \
                      tcmiface
+PRODUCT_PACKAGES += \
+		    FairphoneUpdater
