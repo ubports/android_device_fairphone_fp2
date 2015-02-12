@@ -68,7 +68,7 @@ BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_SEPARATED_DT := true
 
-BOARD_EGL_CFG := device/qcom/$(TARGET_BOARD_PLATFORM)/egl.cfg
+BOARD_EGL_CFG := device/fairphone_devices/fairphone/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01000000

@@ -11,8 +11,8 @@ endif #TARGET_USES_QCOM_BSP
 
 # media_profiles and media_codecs xmls for 8974
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/qcom/msm8974/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
-                      device/qcom/msm8974/media/media_codecs_8974.xml:system/etc/media_codecs.xml
+PRODUCT_COPY_FILES += device/fairphone_devices/fairphone/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
+                      device/fairphone_devices/fairphone/media/media_codecs_8974.xml:system/etc/media_codecs.xml
 endif  #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
 $(call inherit-product, device/qcom/common/common.mk)
@@ -53,8 +53,8 @@ PRODUCT_PACKAGES += fstab.qcom
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8974/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/qcom/msm8974/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
+    device/fairphone_devices/fairphone/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/fairphone_devices/fairphone/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
@@ -80,7 +80,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8974/whitelist_appops.xml:system/etc/whitelist_appops.xml
+    device/fairphone_devices/fairphone/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
 
 # NFC packages
