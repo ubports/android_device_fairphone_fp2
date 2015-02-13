@@ -127,4 +127,6 @@ PRODUCT_BOOT_JARS += qcmediaplayer \
                      vcard \
                      tcmiface
 PRODUCT_PACKAGES += \
-		    FairphoneUpdater
+                    FairphoneUpdater \
+                    FairphoneLauncher3 \
+                    AppOps
