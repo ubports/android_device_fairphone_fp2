@@ -278,3 +278,8 @@ service ml_daemon /system/bin/ml_daemon
     class core
     user root
     group root
+
+service TCMDServer /system/bin/TCMDServer
+    class main
+    group root
+    user root
