@@ -130,3 +130,15 @@ PRODUCT_PACKAGES += \
                     FairphoneUpdater \
                     FairphoneLauncher3 \
                     AppOps
+
+PRODUCT_PROPERTY_OVERRIDES += \
+                              fairphone.ota.device=$(PRODUCT_DEVICE) \
+                              fairphone.ota.time=`date` \
+                              fairphone.ota.android_version=$(PLATFORM_VERSION) \
+                              fairphone.ota.build_number=1.0 \
+                              fairphone.ota.version.number=1 \
+                              fairphone.ota.version.name=Onion \
+                              fairphone.ota.beta=0 \
+                              fairphone.ota.image_type=FAIRPHONE
+
+PRODUCT_MODEL := FP2
