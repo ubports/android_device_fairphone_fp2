@@ -142,3 +142,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
                               fairphone.ota.image_type=FAIRPHONE
 
 PRODUCT_MODEL := FP2
+
+# include an expanded selection of fonts for the SDK.
+EXTENDED_FONT_FOOTPRINT := true
