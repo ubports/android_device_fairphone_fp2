@@ -131,6 +131,10 @@ PRODUCT_PACKAGES += \
                     FairphoneLauncher3 \
                     AppOps
 
+
+PRODUCT_COPY_FILES += \
+    device/fairphone_devices/fairphone/bootanimation.zip:system/media/bootanimation.zip
+
 PRODUCT_PROPERTY_OVERRIDES += \
                               fairphone.ota.device=$(PRODUCT_DEVICE) \
                               fairphone.ota.time=`date` \
