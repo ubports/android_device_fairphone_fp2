@@ -151,3 +151,7 @@ PRODUCT_MODEL := FP2
 
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true
+
+# Preferred Applications for Fairphone
+PRODUCT_COPY_FILES += \
+    device/fairphone_devices/fairphone/preferred.xml:system/etc/preferred-apps/fp.xml
