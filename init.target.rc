@@ -63,6 +63,7 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
+    mkdir /data/usf 0700 system system
 
 on boot
     insmod /system/lib/modules/adsprpc.ko
@@ -173,6 +174,7 @@ service usf_tester /system/bin/usf_tester
     disabled
 
 service usf_epos /system/bin/usf_epos
+    class main
     user system
     group system inet
     disabled
@@ -198,6 +200,16 @@ service usf_hovering /system/bin/usf_hovering
     disabled
 
 service usf_proximity /system/bin/usf_proximity
+    user system
+    group system inet
+    disabled
+
+service usf_pairing /system/bin/usf_pairing
+    user system
+    group system inet
+    disabled
+
+service usf_sw_calib /system/bin/usf_sw_calib
     user system
     group system inet
     disabled
