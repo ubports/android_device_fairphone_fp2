@@ -15,6 +15,11 @@ PRODUCT_COPY_FILES += device/fairphone_devices/FP2/media/media_profiles_8974.xml
                       device/fairphone_devices/FP2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
 endif  #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
+ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
+PRODUCT_COPY_FILES += \
+    device/fairphone_devices/fairphone/apns-conf.xml:system/etc/apns-conf.xml
+endif
+
 $(call inherit-product, device/qcom/common/common.mk)
 
 PRODUCT_NAME := FP2
