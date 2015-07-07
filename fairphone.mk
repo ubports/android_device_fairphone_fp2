@@ -131,7 +131,9 @@ endif
 PRODUCT_PACKAGES += \
                     FairphoneUpdater \
                     FairphoneLauncher3 \
-                    AppOps
+                    AppOps \
+                    MyContactsWidget \
+                    ClockWidget
 
 # Add boot animation
 PRODUCT_COPY_FILES += device/fairphone_devices/fairphone/bootanimation.zip:system/media/bootanimation.zip
