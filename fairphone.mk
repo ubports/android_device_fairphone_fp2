@@ -137,7 +137,8 @@ PRODUCT_PACKAGES += \
                     AppOps \
                     MyContactsWidget \
                     ClockWidget \
-                    FairphonePrivacyImpact
+                    FairphonePrivacyImpact \
+                    ProgrammableButton
 
 # Add boot animation
 PRODUCT_COPY_FILES += device/fairphone_devices/fairphone/bootanimation.zip:system/media/bootanimation.zip
