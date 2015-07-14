@@ -162,3 +162,5 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_COPY_FILES += device/qcom/common/rootdir/etc/init.qcom.diag.rc.user:root/init.qcom.diag.rc
 endif
+
+DEVICE_PACKAGE_OVERLAYS += device/fairphone_devices/fairphone/overlay
