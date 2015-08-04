@@ -19,6 +19,8 @@ $(call inherit-product, device/qcom/common/common.mk)
 
 PRODUCT_NAME := fairphone
 PRODUCT_DEVICE := fairphone
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=android-fairphone
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
