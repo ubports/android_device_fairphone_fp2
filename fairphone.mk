@@ -72,7 +72,8 @@ PRODUCT_PACKAGES += \
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.strict_op_enable=false
+    persist.sys.strict_op_enable=false \
+    persist.sys.usb.config=mtp
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.whitelist=/system/etc/whitelist_appops.xml
