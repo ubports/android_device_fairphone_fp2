@@ -144,7 +144,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += device/fairphone_devices/fairphone/bootanimation.zip:system/media/bootanimation.zip
 
 # Set default ringtone to Fairphone's
-PRODUCT_COPY_FILES += device/fairphone_devices/fairphone/Sunbeam.mp3:system/media/audio/ringtones/Sunbeam.mp3
+PRODUCT_COPY_FILES += device/fairphone_devices/fairphone/Sunbeam.mp3:system/media/audio/ringtones/Fairphone.mp3
 
 PRODUCT_PROPERTY_OVERRIDES += \
                               fairphone.ota.device=$(PRODUCT_DEVICE) \
