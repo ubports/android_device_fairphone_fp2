@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/fairphone.mk
+	$(LOCAL_DIR)/FP2.mk
