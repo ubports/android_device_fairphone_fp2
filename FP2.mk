@@ -17,7 +17,7 @@ endif  #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
 ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/fairphone/apns-conf.xml:system/etc/apns-conf.xml
+    device/fairphone_devices/FP2/apns-conf.xml:system/etc/apns-conf.xml
 endif
 
 $(call inherit-product, device/qcom/common/common.mk)
@@ -161,7 +161,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
                               fairphone.ota.version.number=1 \
                               fairphone.ota.version.name=Onion \
                               fairphone.ota.beta=0 \
-                              fairphone.ota.image_type=FAIRPHONE
+                              fairphone.ota.image_type=FP2
 
 PRODUCT_MODEL := FP2
 
