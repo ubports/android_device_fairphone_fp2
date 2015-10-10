@@ -36,6 +36,10 @@ PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/fairphone_devices/FP2/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
+# Display logo image file
+PRODUCT_COPY_FILES += \
+    device/fairphone_devices/FP2/splash.img:$(PRODUCT_OUT)/splash.img
+
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
