@@ -151,6 +151,8 @@ PRODUCT_PACKAGES += \
                     FairphonePrivacyImpact \
                     ProgrammableButton
 
+PRODUCT_PACKAGES += iFixit
+
 # Add boot animation
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/bootanimation.zip:system/media/bootanimation.zip
 
