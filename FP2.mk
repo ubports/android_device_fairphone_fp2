@@ -153,6 +153,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += iFixit
 
+# Amaze File Manager
+PRODUCT_PACKAGES += Amaze 
+
 # Add boot animation
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/bootanimation.zip:system/media/bootanimation.zip
 
