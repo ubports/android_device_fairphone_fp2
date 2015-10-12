@@ -719,12 +719,11 @@
     <path name="speaker">
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="SLIM_0_RX Channels" value="One" />
-        <ctl name="IIR2 INP1 MUX" value="RX1" />
-        <ctl name="RX7 MIX1 INP1" value="IIR2" />
-
+        <!--ctl name="IIR2 INP1 MUX" value="RX1" /-->
+        <ctl name="RX7 MIX1 INP1" value="RX1" />
         <ctl name="RX7 Digital Volume" value="87" />
-		<ctl name="IIR2 INP1 Volume" value="84" />
-        <ctl name="SPK DRV Volume" value="8" />
+		<ctl name="SPK DRV Volume" value="8" />
+		<!--ctl name="IIR2 INP1 Volume" value="84" />
 		<ctl name="IIR2 Band1" id ="0" value="264734248" />
 	    <ctl name="IIR2 Band1" id ="1" value="544273329" />
 	    <ctl name="IIR2 Band1" id ="2" value="264734248" />
@@ -754,7 +753,7 @@
 		<ctl name="IIR2 Enable Band2" value="0" />
 		<ctl name="IIR2 Enable Band3" value="0" />
 		<ctl name="IIR2 Enable Band4" value="0" />
-		<ctl name="IIR2 Enable Band5" value="0" />
+		<ctl name="IIR2 Enable Band5" value="0" /-->
     </path>
 
     <path name="speaker-fluid">
@@ -890,7 +889,7 @@
 
     <path name="headset-mic-liquid">
         <path name="adc2" />
-        <ctl name="ADC2 Volume" value="20" />
+        <ctl name="ADC2 Volume" value="20" /> 
     </path>
 
     <path name="voice-handset">
