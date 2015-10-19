@@ -25,7 +25,7 @@ $(call inherit-product, device/qcom/common/common.mk)
 PRODUCT_NAME := FP2
 PRODUCT_DEVICE := FP2
 PRODUCT_BRAND := Fairphone
-PRODUCT_MANUFACTURER := HI-P
+PRODUCT_MANUFACTURER := Fairphone
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-fairphone
 
