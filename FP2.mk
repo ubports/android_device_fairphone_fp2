@@ -186,4 +186,8 @@ ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_COPY_FILES += device/qcom/common/rootdir/etc/init.qcom.diag.rc.user:root/init.qcom.diag.rc
 endif
 
+ifeq ($(strip $(FP2_SKIP_BOOT_JARS_CHECK)),)
+SKIP_BOOT_JARS_CHECK := true
+endif
+
 DEVICE_PACKAGE_OVERLAYS += device/fairphone_devices/FP2/overlay
