@@ -22,13 +22,6 @@ endif
 
 $(call inherit-product, device/qcom/common/common.mk)
 
-PRODUCT_NAME := FP2
-PRODUCT_DEVICE := FP2
-PRODUCT_BRAND := Fairphone
-PRODUCT_MANUFACTURER := Fairphone
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.clientidbase=android-fairphone
-
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/audio_policy.conf:system/etc/audio_policy.conf \
@@ -60,6 +53,14 @@ PRODUCT_PACKAGES += \
     battery_monitor \
     battery_shutdown
 
+# Graphics
+PRODUCT_PACKAGES += \
+    copybit.msm8974 \
+    gralloc.msm8974 \
+    hwcomposer.msm8974 \
+    memtrack.msm8974 \
+    liboverlay
+
 #fstab.qcom
 PRODUCT_PACKAGES += fstab.qcom
 
@@ -80,6 +81,8 @@ PRODUCT_PACKAGES += \
         libantradio \
         ANTRadioService \
         antradio_app
+
+
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -142,20 +145,6 @@ PRODUCT_BOOT_JARS += qsb-port
 PRODUCT_BOOT_JARS += oem-services
 endif
 
-PRODUCT_PACKAGES += \
-                    FairphoneUpdater \
-                    FairphoneLauncher3 \
-                    AppOps \
-                    MyContactsWidget \
-                    ClockWidget \
-                    FairphonePrivacyImpact \
-                    ProgrammableButton
-
-PRODUCT_PACKAGES += iFixit
-
-# Amaze File Manager
-PRODUCT_PACKAGES += Amaze 
-
 # Add boot animation
 PRODUCT_COPY_FILES += device/fairphone_devices/FP2/bootanimation.zip:system/media/bootanimation.zip
 
@@ -172,7 +161,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
                               fairphone.ota.beta=0 \
                               fairphone.ota.image_type=FP2
 
-PRODUCT_MODEL := FP2
 
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true
@@ -189,5 +177,7 @@ endif
 ifeq ($(strip $(FP2_SKIP_BOOT_JARS_CHECK)),)
 SKIP_BOOT_JARS_CHECK := true
 endif
+
+$(call inherit-product, hardware/qcom/display-caf/msm8974/Android.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/fairphone_devices/FP2/overlay

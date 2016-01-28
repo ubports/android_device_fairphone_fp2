@@ -9,6 +9,7 @@ endif
 TARGET_KERNEL_ARCH := arm
 BOARD_USES_GENERIC_AUDIO := true
 USE_CAMERA_STUB := false
+TARGET_NO_BOOTLOADER := true
 
 TARGET_USES_AOSP := false
 # Compile with msm kernel
@@ -17,12 +18,15 @@ TARGET_HAS_QC_KERNEL_SOURCE := true
 
 -include $(QCPATH)/common/msm8974/BoardConfigVendor.mk
 
+TARGET_USES_QCOM_BSP := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
+
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
 # to get rid of compilation error.
 TARGET_HAVE_HDMI_OUT := false
 TARGET_USES_OVERLAY := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_RPC := true
@@ -59,15 +63,18 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Use signed boot and recovery image
-TARGET_BOOTIMG_SIGNED := true
+TARGET_BOOTIMG_SIGNED := false
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=tty0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_SEPARATED_DT := true
 
+BOARD_CUSTOM_BOOTIMG_MK := device/fairphone_devices/FP2/mkbootimg.mk
+TARGET_KERNEL_SOURCE := kernel/fairphone
+TARGET_KERNEL_CONFIG := fairphone_defconfig
 BOARD_EGL_CFG := device/fairphone_devices/FP2/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
@@ -103,7 +110,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/generic/common/bluetooth
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
+#TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 
 TARGET_LDPRELOAD := libNimsWrap.so
 

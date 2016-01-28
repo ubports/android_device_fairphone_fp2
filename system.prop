@@ -143,4 +143,3 @@ audio.offload.gapless.enabled=false
 
 #enable dsds
 persist.radio.multisim.config=dsds
-ro.adb.secure=1
