@@ -295,3 +295,9 @@ service TCMDServer /system/bin/TCMDServer
     class main
     group root
     user root
+
+service wcnss_init /system/bin/sh /system/etc/init.wcnss.wifi.sh
+    class main
+    user system
+    group system wifi
+    oneshot

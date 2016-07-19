@@ -67,7 +67,8 @@ PRODUCT_PACKAGES += fstab.qcom
 #wlan driver
 PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/fairphone_devices/FP2/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin
+    device/fairphone_devices/FP2/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
+    device/fairphone_devices/FP2/init_wlan.sh:system/etc/init_wlan.sh
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
