@@ -178,6 +178,8 @@ ifeq ($(strip $(FP2_SKIP_BOOT_JARS_CHECK)),)
 SKIP_BOOT_JARS_CHECK := true
 endif
 
+$(call inherit-product, device/fairphone_devices/FP2/mdt.mk)
+
 $(call inherit-product, hardware/qcom/display-caf/msm8974/Android.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/fairphone_devices/FP2/overlay
