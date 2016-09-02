@@ -77,10 +77,6 @@ on boot
     chown system drmrpc /sys/devices/f9924000.i2c/i2c-2/2-004a/secure_touch_enable
     chown system drmrpc /sys/devices/f9924000.i2c/i2c-2/2-004a/secure_touch
 
-    mkdir /dev/video
-    symlink /dev/video32 /dev/video/venus_dec
-    symlink /dev/video33 /dev/video/venus_enc
-
 # Allow usb charging to be disabled persistently
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
@@ -109,6 +105,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 service qgesturesvr /system/bin/mm-gesture-daemon
     class late_start
     user system
+    disabled
     group system camera input graphics net_bt_stack
 
 service qrngd /system/bin/qrngd -f

@@ -1,13 +1,13 @@
-TARGET_USES_QCOM_BSP := true
 TARGET_USES_QCA_NFC := other
+
+TARGET_USES_QCOM_BSP := true
 
 ifeq ($(TARGET_USES_QCOM_BSP), true)
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 endif #TARGET_USES_QCOM_BSP
 
-#TARGET_DISABLE_DASH := true
-#TARGET_DISABLE_OMX_SECURE_TEST_APP := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # media_profiles and media_codecs xmls for 8974
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
@@ -20,8 +20,6 @@ PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/apns-conf.xml:system/etc/apns-conf.xml
 endif
 
-$(call inherit-product, device/qcom/common/common.mk)
-
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/audio_policy.conf:system/etc/audio_policy.conf \
@@ -32,6 +30,9 @@ PRODUCT_COPY_FILES += \
 # Display logo image file
 PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/splash.img:$(PRODUCT_OUT)/splash.img
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ubuntu.widi.supported=1
 
 PRODUCT_PACKAGES += \
     libqcomvisualizer \
@@ -70,6 +71,10 @@ PRODUCT_COPY_FILES += \
     device/fairphone_devices/FP2/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
     device/fairphone_devices/FP2/init_wlan.sh:system/etc/init_wlan.sh
 
+#bluetooth
+PRODUCT_COPY_FILES += \
+    device/fairphone_devices/FP2/init_bt.sh:system/etc/init_bt.sh
+
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf
@@ -84,6 +89,8 @@ PRODUCT_PACKAGES += \
         antradio_app
 
 
+PRODUCT_PACKAGES += \
+        conn_init
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
