@@ -11,25 +11,25 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # media_profiles and media_codecs xmls for 8974
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/fairphone_devices/FP2/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
-                      device/fairphone_devices/FP2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
+PRODUCT_COPY_FILES += device/fairphone/FP2/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
+                      device/fairphone/FP2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
 endif  #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
 ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/apns-conf.xml:system/etc/apns-conf.xml
+    device/fairphone/FP2/apns-conf.xml:system/etc/apns-conf.xml
 endif
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/audio_policy.conf:system/etc/audio_policy.conf \
-    device/fairphone_devices/FP2/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/fairphone_devices/FP2/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/fairphone_devices/FP2/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
+    device/fairphone/FP2/audio_policy.conf:system/etc/audio_policy.conf \
+    device/fairphone/FP2/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/fairphone/FP2/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/fairphone/FP2/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
 # Display logo image file
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/splash.img:$(PRODUCT_OUT)/splash.img
+    device/fairphone/FP2/splash.img:$(PRODUCT_OUT)/splash.img
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ubuntu.widi.supported=1
@@ -67,13 +67,13 @@ PRODUCT_PACKAGES += fstab.qcom
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/fairphone_devices/FP2/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
-    device/fairphone_devices/FP2/init_wlan.sh:system/etc/init_wlan.sh
+    device/fairphone/FP2/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/fairphone/FP2/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
+    device/fairphone/FP2/init_wlan.sh:system/etc/init_wlan.sh
 
 #bluetooth
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/init_bt.sh:system/etc/init_bt.sh
+    device/fairphone/FP2/init_bt.sh:system/etc/init_bt.sh
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
@@ -104,7 +104,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/whitelist_appops.xml:system/etc/whitelist_appops.xml
+    device/fairphone/FP2/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
 
 # NFC packages
@@ -153,12 +153,6 @@ PRODUCT_BOOT_JARS += qsb-port
 PRODUCT_BOOT_JARS += oem-services
 endif
 
-# Add boot animation
-PRODUCT_COPY_FILES += device/fairphone_devices/FP2/bootanimation.zip:system/media/bootanimation.zip
-
-# Set default ringtone to Fairphone's
-PRODUCT_COPY_FILES += device/fairphone_devices/FP2/Sunbeam.mp3:system/media/audio/ringtones/Fairphone.mp3
-
 PRODUCT_PROPERTY_OVERRIDES += \
                               fairphone.ota.device=$(PRODUCT_DEVICE) \
                               fairphone.ota.time=`date` \
@@ -175,7 +169,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Preferred Applications for Fairphone
 PRODUCT_COPY_FILES += \
-    device/fairphone_devices/FP2/preferred.xml:system/etc/preferred-apps/fp.xml
+    device/fairphone/FP2/preferred.xml:system/etc/preferred-apps/fp.xml
 
 # remove /dev/diag in user version for CTS
 ifeq ($(TARGET_BUILD_VARIANT),user)
@@ -186,8 +180,5 @@ ifeq ($(strip $(FP2_SKIP_BOOT_JARS_CHECK)),)
 SKIP_BOOT_JARS_CHECK := true
 endif
 
-$(call inherit-product, device/fairphone_devices/FP2/mdt.mk)
-
+$(call inherit-product, device/fairphone/FP2/mdt.mk)
 $(call inherit-product, hardware/qcom/display-caf/msm8974/Android.mk)
-
-DEVICE_PACKAGE_OVERLAYS += device/fairphone_devices/FP2/overlay

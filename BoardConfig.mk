@@ -69,10 +69,10 @@ BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3b7 ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 debug
 BOARD_KERNEL_SEPARATED_DT := true
 
-BOARD_CUSTOM_BOOTIMG_MK := device/fairphone_devices/FP2/mkbootimg.mk
-TARGET_KERNEL_SOURCE := kernel/fairphone
+BOARD_CUSTOM_BOOTIMG_MK := device/fairphone/FP2/mkbootimg.mk
+TARGET_KERNEL_SOURCE := kernel/fairphone/FP2
 TARGET_KERNEL_CONFIG := fairphone_defconfig
-BOARD_EGL_CFG := device/fairphone_devices/FP2/egl.cfg
+BOARD_EGL_CFG := device/fairphone/FP2/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01000000
