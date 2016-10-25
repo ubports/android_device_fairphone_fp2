@@ -16,6 +16,9 @@ TARGET_USES_AOSP := false
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_HAS_QC_KERNEL_SOURCE := true
 
+# qcom hardware
+BOARD_USES_QCOM_HARDWARE := true
+
 -include $(QCPATH)/common/msm8974/BoardConfigVendor.mk
 
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
