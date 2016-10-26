@@ -1,7 +1,5 @@
 TARGET_USES_QCA_NFC := other
 
-TARGET_USES_QCOM_BSP := true
-
 ifeq ($(TARGET_USES_QCOM_BSP), true)
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
@@ -67,13 +65,17 @@ PRODUCT_PACKAGES += fstab.qcom
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/fairphone/FP2/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
+    device/fairphone/FP2/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    device/fairphone/FP2/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     device/fairphone/FP2/init_wlan.sh:system/etc/init_wlan.sh
 
 #bluetooth
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/init_bt.sh:system/etc/init_bt.sh
+
+#Init
+PRODUCT_COPY_FILES += \
+    device/fairphone/FP2/init.qcom.rc:root/init.qcom.rc
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
