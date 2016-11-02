@@ -74,3 +74,9 @@ service rmt_storage /system/bin/rmt_storage
     class core
     user root
     group system
+
+service init_wlan /system/bin/sh /system/etc/init_wlan.sh
+    class main
+    user root
+    group root
+    oneshot
