@@ -27,9 +27,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ubuntu.widi.supported=1
 
 PRODUCT_PACKAGES += \
+    audiod \
+    audio.a2dp.default \
+    audio_policy.msm8974 \
+    audio.primary.msm8974 \
+    audio.r_submix.default \
+    audio.usb.default \
+    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libqcompostprocbundle
+    tinymix
 
 # Feature definition files for 8974
 PRODUCT_COPY_FILES += \
@@ -83,6 +90,22 @@ PRODUCT_PACKAGES += \
     libantradio \
     ANTRadioService \
     antradio_app
+
+# Media
+PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libdivxdrmdecrypt \
+    libdashplayer \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVdecHevc \
+    libOmxVenc \
+    libstagefrighthw \
+    qcmediaplayer
 
 PRODUCT_PACKAGES += \
     conn_init
