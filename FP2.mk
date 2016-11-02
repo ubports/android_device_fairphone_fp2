@@ -1,5 +1,3 @@
-TARGET_USES_QCA_NFC := other
-
 ifeq ($(TARGET_USES_QCOM_BSP), true)
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
@@ -24,10 +22,6 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     device/fairphone/FP2/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/fairphone/FP2/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
-
-# Display logo image file
-PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/splash.img:$(PRODUCT_OUT)/splash.img
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ubuntu.widi.supported=1
@@ -85,14 +79,13 @@ PRODUCT_PACKAGES += wcnss_service
 
 #ANT stack
 PRODUCT_PACKAGES += \
-        AntHalService \
-        libantradio \
-        ANTRadioService \
-        antradio_app
-
+    AntHalService \
+    libantradio \
+    ANTRadioService \
+    antradio_app
 
 PRODUCT_PACKAGES += \
-        conn_init
+    conn_init
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -108,45 +101,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer \
+    org.codeaurora.Performance \
+    vcard \
+    tcmiface
 
-# NFC packages
-ifeq ($(TARGET_USES_QCA_NFC),true)
-NFC_D := true
-
-ifeq ($(NFC_D), true)
-    PRODUCT_PACKAGES += \
-        libnfcD-nci \
-        libnfcD_nci_jni \
-        nfc_nci.msm8974 \
-        NfcDNci \
-        Tag \
-        com.android.nfc_extras \
-        com.android.nfc.helper
-else
-PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni \
-    nfc_nci.msm8974 \
-    NfcNci \
-    Tag \
-    com.android.nfc_extras
-endif
-
-# file that declares the MIFARE NFC constant
-# Commands to migrate prefs from com.android.nfc3 to com.android.nfc
-# NFC access control + feature files + configuration
-PRODUCT_COPY_FILES += \
-        frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-        frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
-# Enable NFC Forum testing by temporarily changing the PRODUCT_BOOT_JARS
-# line has to be in sync with build/target/product/core_base.mk
-endif
-
-PRODUCT_BOOT_JARS += qcmediaplayer \
-                     org.codeaurora.Performance \
-                     vcard \
-                     tcmiface
 ifneq ($(strip $(QCPATH)),)
 PRODUCT_BOOT_JARS += WfdCommon
 PRODUCT_BOOT_JARS += qcom.fmradio
@@ -155,32 +115,8 @@ PRODUCT_BOOT_JARS += qsb-port
 PRODUCT_BOOT_JARS += oem-services
 endif
 
-PRODUCT_PROPERTY_OVERRIDES += \
-                              fairphone.ota.device=$(PRODUCT_DEVICE) \
-                              fairphone.ota.time=`date` \
-                              fairphone.ota.android_version=$(PLATFORM_VERSION) \
-                              fairphone.ota.build_number=1.0 \
-                              fairphone.ota.version.number=1 \
-                              fairphone.ota.version.name=Onion \
-                              fairphone.ota.beta=0 \
-                              fairphone.ota.image_type=FP2
-
-
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true
-
-# Preferred Applications for Fairphone
-PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/preferred.xml:system/etc/preferred-apps/fp.xml
-
-# remove /dev/diag in user version for CTS
-ifeq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_COPY_FILES += device/qcom/common/rootdir/etc/init.qcom.diag.rc.user:root/init.qcom.diag.rc
-endif
-
-ifeq ($(strip $(FP2_SKIP_BOOT_JARS_CHECK)),)
-SKIP_BOOT_JARS_CHECK := true
-endif
 
 $(call inherit-product, device/fairphone/FP2/mdt.mk)
 $(call inherit-product, hardware/qcom/display-caf/msm8974/Android.mk)
