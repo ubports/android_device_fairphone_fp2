@@ -67,16 +67,7 @@ PRODUCT_PACKAGES += fstab.qcom
 #wlan driver
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    device/fairphone/FP2/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
-    device/fairphone/FP2/init_wlan.sh:system/etc/init_wlan.sh
-
-#bluetooth
-PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/init_bt.sh:system/etc/init_bt.sh
-
-#Init
-PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/init.qcom.rc:root/init.qcom.rc
+    device/fairphone/FP2/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
@@ -109,6 +100,26 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     conn_init
+
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    device/fairphone/FP2/rootdir/root/init.qcom.modem_links.sh:root/init.qcom.modem_links.sh \
+    device/fairphone/FP2/rootdir/root/init_wlan.sh:root/init_wlan.sh \
+    device/fairphone/FP2/rootdir/root/init_bt.sh:root/init_bt.sh \
+    device/fairphone/FP2/rootdir/root/init.wcnss.wifi.sh:root/init.wcnss.wifi.sh \
+    device/fairphone/FP2/rootdir/root/fstab.qcom:root/fstab.qcom \
+    device/fairphone/FP2/rootdir/root/recovery.fstab:root/recovery.fstab \
+    device/fairphone/FP2/rootdir/root/twrp.fstab:root/twrp.fstab \
+    device/fairphone/FP2/rootdir/root/init.qcom.rc:root/init.qcom.rc \
+    device/fairphone/FP2/rootdir/root/init.qcom.power.rc:root/init.qcom.power.rc \
+    device/fairphone/FP2/rootdir/root/init.qcom.usb.rc:root/init.qcom.usb.rc
+    
+
+# Configs
+PRODUCT_COPY_FILES += \
+    device/fairphone/FP2/rootdir/system/etc/usf_post_boot.sh:system/etc/usf_post_boot.sh \
+    device/fairphone/FP2/rootdir/system/etc/usf_settings.sh:system/etc/usf_settings.sh
+    
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
