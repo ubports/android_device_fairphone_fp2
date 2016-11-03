@@ -98,6 +98,16 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     qcmediaplayer
 
+# Misc dependency packages
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libnl_2 \
+    libbson \
+    libcnefeatureconfig \
+    libtinyxml \
+    libxml2
+
 PRODUCT_PACKAGES += \
     conn_init
 
@@ -112,7 +122,8 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/twrp.fstab:root/twrp.fstab \
     device/fairphone/FP2/rootdir/root/init.qcom.rc:root/init.qcom.rc \
     device/fairphone/FP2/rootdir/root/init.qcom.power.rc:root/init.qcom.power.rc \
-    device/fairphone/FP2/rootdir/root/init.qcom.usb.rc:root/init.qcom.usb.rc
+    device/fairphone/FP2/rootdir/root/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    device/fairphone/FP2/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
     
 
 # Configs
