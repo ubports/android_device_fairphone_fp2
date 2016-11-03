@@ -98,3 +98,8 @@ service time_daemon /system/bin/time_daemon
     class late_start
     user root
     group root
+
+service qcamerasvr /system/bin/mm-qcamera-daemon
+     class late_start
+     user camera
+     group camera system inet input graphics
