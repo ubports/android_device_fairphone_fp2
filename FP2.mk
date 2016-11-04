@@ -121,6 +121,7 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/recovery.fstab:root/recovery.fstab \
     device/fairphone/FP2/rootdir/root/twrp.fstab:root/twrp.fstab \
     device/fairphone/FP2/rootdir/root/init.qcom.rc:root/init.qcom.rc \
+    device/fairphone/FP2/rootdir/root/init.target.rc:root/init.target.rc \
     device/fairphone/FP2/rootdir/root/init.qcom.power.rc:root/init.qcom.power.rc \
     device/fairphone/FP2/rootdir/root/init.qcom.usb.rc:root/init.qcom.usb.rc \
     device/fairphone/FP2/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
