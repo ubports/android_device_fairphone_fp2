@@ -121,9 +121,18 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/recovery.fstab:root/recovery.fstab \
     device/fairphone/FP2/rootdir/root/twrp.fstab:root/twrp.fstab \
     device/fairphone/FP2/rootdir/root/init.qcom.rc:root/init.qcom.rc \
+    device/fairphone/FP2/rootdir/root/init.qcom.sh:root/init.qcom.sh \
+    device/fairphone/FP2/rootdir/root/init.qcom.syspart_fixup.sh:root/init.qcom.syspart_fixup.sh \
+    device/fairphone/FP2/rootdir/root/init.qcom.ssr.sh:root/init.qcom.ssr.sh \
+    device/fairphone/FP2/rootdir/root/init.qcom.modem_links.sh:root/init.qcom.modem_links.sh \
+    device/fairphone/FP2/rootdir/root/init.qcom.factory.sh:root/init.qcom.factory.sh \
+    device/fairphone/FP2/rootdir/root/init.qcom.early_boot.sh:root/init.qcom.early_boot.sh \
+    device/fairphone/FP2/rootdir/root/init.qcom.class_core.sh:root/init.qcom.class_core.sh \
+    device/fairphone/FP2/rootdir/root/init.mdm.sh:root/init.mdm.sh \
+    device/fairphone/FP2/rootdir/root/init.class_main.sh:root/init.class_main.sh \
     device/fairphone/FP2/rootdir/root/init.target.rc:root/init.target.rc \
-    device/fairphone/FP2/rootdir/root/init.qcom.power.rc:root/init.qcom.power.rc \
     device/fairphone/FP2/rootdir/root/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    device/fairphone/FP2/rootdir/root/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/fairphone/FP2/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
     
 
