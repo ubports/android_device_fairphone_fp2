@@ -17,6 +17,7 @@ TARGET_HAS_QC_KERNEL_SOURCE := true
 
 # qcom hardware
 BOARD_USES_QCOM_HARDWARE := true
+BOARD_HAS_QCOM_WLAN := true
 
 -include $(QCPATH)/common/msm8974/BoardConfigVendor.mk
 
