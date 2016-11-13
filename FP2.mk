@@ -114,7 +114,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/init.qcom.modem_links.sh:root/init.qcom.modem_links.sh \
-    device/fairphone/FP2/rootdir/root/init_wlan.sh:root/init_wlan.sh \
     device/fairphone/FP2/rootdir/root/init_bt.sh:root/init_bt.sh \
     device/fairphone/FP2/rootdir/root/init.wcnss.wifi.sh:root/init.wcnss.wifi.sh \
     device/fairphone/FP2/rootdir/root/fstab.qcom:root/fstab.qcom \
@@ -139,6 +138,7 @@ PRODUCT_COPY_FILES += \
 # Configs
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/system/etc/usf_post_boot.sh:system/etc/usf_post_boot.sh \
+    device/fairphone/FP2/rootdir/root/init_wlan.sh:system/etc/init_wlan.sh \
     device/fairphone/FP2/rootdir/system/etc/usf_settings.sh:system/etc/usf_settings.sh
     
 
