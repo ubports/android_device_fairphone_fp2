@@ -102,3 +102,9 @@ service time_daemon /system/bin/time_daemon
    class late_start
    user root
    group root
+
+service init_wlan /system/bin/sh /system/etc/init_wlan.sh
+    class main
+    user root
+    group root
+    oneshot
