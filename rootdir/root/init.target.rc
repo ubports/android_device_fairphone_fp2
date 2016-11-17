@@ -108,3 +108,10 @@ service init_wlan /system/bin/sh /system/etc/init_wlan.sh
     user root
     group root
     oneshot
+
+service init_bt /system/bin/sh /init_bt.sh
+    class main
+    user root
+    group root
+    oneshot
+
