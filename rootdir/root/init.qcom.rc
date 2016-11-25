@@ -101,6 +101,13 @@ on boot
     chmod 2770 /data/system/perfd
     mkdir /persist/drm 0770 system system
 
+    # sensor service
+    mkdir /data/misc/sensors 0755 root system
+    chmod 2755 /data/misc/sensors
+    mkdir /data/misc/sensors/debug/ 0755 root system
+    chmod 2755 /data/misc/sensors/debug
+
+
     setprop wifi.interface wlan0
 
 #   Define TCP buffer sizes for various networks
