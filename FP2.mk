@@ -66,8 +66,8 @@ PRODUCT_PACKAGES += fstab.qcom
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    device/fairphone/FP2/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    device/fairphone/FP2/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    device/fairphone/FP2/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
