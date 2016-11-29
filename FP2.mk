@@ -111,6 +111,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     conn_init
 
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/init.qcom.modem_links.sh:root/init.qcom.modem_links.sh \
