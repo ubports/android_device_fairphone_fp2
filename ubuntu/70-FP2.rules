@@ -1,4 +1,4 @@
-CTION=="add", KERNEL=="diag", OWNER="system", GROUP="qcom_diag", MODE="0660"
+ACTION=="add", KERNEL=="diag", OWNER="system", GROUP="qcom_diag", MODE="0660"
 ACTION=="add", KERNEL=="genlock", OWNER="system", GROUP="system", MODE="0666"
 ACTION=="add", KERNEL=="kgsl", OWNER="system", GROUP="system", MODE="0666"
 ACTION=="add", KERNEL=="kgsl-3d0", OWNER="system", GROUP="system", MODE="0666"
