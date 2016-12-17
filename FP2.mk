@@ -137,14 +137,14 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/init.qcom.usb.rc:root/init.qcom.usb.rc \
     device/fairphone/FP2/rootdir/root/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/fairphone/FP2/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
-    
+
 
 # Configs
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/system/etc/usf_post_boot.sh:system/etc/usf_post_boot.sh \
     device/fairphone/FP2/rootdir/root/init_wlan.sh:system/etc/init_wlan.sh \
     device/fairphone/FP2/rootdir/system/etc/usf_settings.sh:system/etc/usf_settings.sh
-    
+
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -173,6 +173,14 @@ PRODUCT_BOOT_JARS += security-bridge
 PRODUCT_BOOT_JARS += qsb-port
 PRODUCT_BOOT_JARS += oem-services
 endif
+# Ubuntu Overlay Files
+PRODUCT_COPY_FILES += \
+    device/fairphone/FP2/ubuntu/adbd.conf:system/ubuntu/etc/init/adbd.conf \
+    device/fairphone/FP2/ubuntu/bluetooth-touch-FP2.conf:system/ubuntu/etc/init/bluetooth-touch-FP2.conf \
+    device/fairphone/FP2/ubuntu/FP2.conf:system/ubuntu/etc/ubuntu-touch-session.d/FP2.conf \
+    device/fairphone/FP2/ubuntu/set-brightness-fp2.conf:system/ubuntu/etc/set-brightness-fp2.conf \
+    device/fairphone/FP2/ubuntu/ubuntu-location-service.conf:system/ubuntu/etc/ubuntu-location-service.conf \
+    device/fairphone/FP2/ubuntu/70-FP2.rules:system/ubuntu/usr/lib/lxc-android-config/70-FP2.rules
 
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true
