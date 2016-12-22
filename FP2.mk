@@ -117,7 +117,6 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/recovery.fstab:root/recovery.fstab \
     device/fairphone/FP2/rootdir/root/twrp.fstab:root/twrp.fstab \
     device/fairphone/FP2/rootdir/root/init.qcom.rc:root/init.qcom.rc \
-    device/fairphone/FP2/rootdir/root/init.qcom.sh:root/init.qcom.sh \
     device/fairphone/FP2/rootdir/root/init.qcom.syspart_fixup.sh:root/init.qcom.syspart_fixup.sh \
     device/fairphone/FP2/rootdir/root/init.qcom.ssr.sh:root/init.qcom.ssr.sh \
     device/fairphone/FP2/rootdir/root/init.qcom.modem_links.sh:root/init.qcom.modem_links.sh \
