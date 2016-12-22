@@ -29,33 +29,6 @@ LOCAL_PATH := $(call my-dir)
 #$(INSTALLED_KERNEL_TARGET): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 #	$(transform-prebuilt-to-target)
 
-#----------------------------------------------------------------------
-# Copy additional target-specific files
-#----------------------------------------------------------------------
-include $(CLEAR_VARS)
-LOCAL_MODULE       := gpio-keys.kl
-LOCAL_MODULE_TAGS  := optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := $(LOCAL_MODULE)
-LOCAL_MODULE_PATH  := $(TARGET_OUT_KEYLAYOUT)
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE       := atmel_mxt_ts.kl
-LOCAL_MODULE_TAGS  := optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := $(LOCAL_MODULE)
-LOCAL_MODULE_PATH  := $(TARGET_OUT_KEYLAYOUT)
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE       := synaptics_rmi4_i2c.kl
-LOCAL_MODULE_TAGS  := optional
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := $(LOCAL_MODULE)
-LOCAL_MODULE_PATH  := $(TARGET_OUT_KEYLAYOUT)
-include $(BUILD_PREBUILT)
-
 ifeq ($(strip $(BOARD_HAS_ATH_WLAN_AR6004)),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE       := wpa_supplicant_ath6kl.conf
