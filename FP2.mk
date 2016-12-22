@@ -1,15 +1,4 @@
-ifeq ($(TARGET_USES_QCOM_BSP), true)
-# Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-endif #TARGET_USES_QCOM_BSP
-
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-
-# media_profiles and media_codecs xmls for 8974
-ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/fairphone/FP2/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
-                      device/fairphone/FP2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
-endif  #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
 ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
 PRODUCT_COPY_FILES += \
@@ -22,6 +11,10 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     device/fairphone/FP2/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/fairphone/FP2/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
+
+PRODUCT_COPY_FILES += \
+    device/fairphone/FP2/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
+    device/fairphone/FP2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ubuntu.widi.supported=1
@@ -47,11 +40,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml
-
-#battery_monitor
-PRODUCT_PACKAGES += \
-    battery_monitor \
-    battery_shutdown
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -138,13 +126,11 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/init.qcom.usb.sh:root/init.qcom.usb.sh \
     device/fairphone/FP2/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
 
-
 # Configs
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/system/etc/usf_post_boot.sh:system/etc/usf_post_boot.sh \
     device/fairphone/FP2/rootdir/root/init_wlan.sh:system/etc/init_wlan.sh \
     device/fairphone/FP2/rootdir/system/etc/usf_settings.sh:system/etc/usf_settings.sh
-
 
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -166,13 +152,6 @@ PRODUCT_BOOT_JARS += \
     vcard \
     tcmiface
 
-ifneq ($(strip $(QCPATH)),)
-PRODUCT_BOOT_JARS += WfdCommon
-PRODUCT_BOOT_JARS += qcom.fmradio
-PRODUCT_BOOT_JARS += security-bridge
-PRODUCT_BOOT_JARS += qsb-port
-PRODUCT_BOOT_JARS += oem-services
-endif
 # Ubuntu Overlay Files
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/ubuntu/adbd.conf:system/ubuntu/etc/init/adbd.conf \

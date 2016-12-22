@@ -2,10 +2,7 @@
 #
 # Product-specific compile-time definitions.
 #
-
-ifeq ($(TARGET_ARCH),)
 TARGET_ARCH := arm
-endif
 TARGET_KERNEL_ARCH := arm
 USE_CAMERA_STUB := false
 TARGET_NO_BOOTLOADER := true
