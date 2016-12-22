@@ -2,6 +2,7 @@
 #
 # Product-specific compile-time definitions.
 #
+DEVICE_PATH := device/fairphone/FP2
 TARGET_ARCH := arm
 TARGET_KERNEL_ARCH := arm
 USE_CAMERA_STUB := false
@@ -87,12 +88,15 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(LOCAL_PATH)/charger/images
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(DEVICE_PATH)/charger/images
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
 
 TARGET_HW_DISK_ENCRYPTION := false
+
+# Power
+TARGET_POWERHAL_VARIANT := qcom
 
 # Workaround framework bluetooth dependency
 BOARD_HAVE_BLUETOOTH := true
