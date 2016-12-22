@@ -52,6 +52,10 @@ PRODUCT_PACKAGES += \
 #fstab.qcom
 PRODUCT_PACKAGES += fstab.qcom
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8974
+
 #wlan driver
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
