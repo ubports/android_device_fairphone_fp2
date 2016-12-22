@@ -56,6 +56,12 @@ PRODUCT_PACKAGES += fstab.qcom
 PRODUCT_PACKAGES += \
     power.msm8974
 
+# Keylayouts and Keychars
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
+
 #wlan driver
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
