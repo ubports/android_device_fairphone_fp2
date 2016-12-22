@@ -1,10 +1,5 @@
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
-ifeq ($(PROPRIETARY_BLOBS_EXIST),true)
-PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/apns-conf.xml:system/etc/apns-conf.xml
-endif
-
 # Audio configuration file
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/audio_policy.conf:system/etc/audio_policy.conf \
