@@ -1,3 +1,4 @@
+$rootdir="../../"
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Audio configuration file
@@ -158,12 +159,19 @@ PRODUCT_BOOT_JARS += \
 
 # Ubuntu Overlay Files
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/ubuntu/adbd.conf:system/ubuntu/etc/init/adbd.conf \
-    device/fairphone/FP2/ubuntu/bluetooth-touch-FP2.conf:system/ubuntu/etc/init/bluetooth-touch-FP2.conf \
-    device/fairphone/FP2/ubuntu/FP2.conf:system/ubuntu/etc/ubuntu-touch-session.d/FP2.conf \
-    device/fairphone/FP2/ubuntu/set-brightness-fp2.conf:system/ubuntu/etc/set-brightness-fp2.conf \
-    device/fairphone/FP2/ubuntu/ubuntu-location-service.conf:system/ubuntu/etc/ubuntu-location-service.conf \
-    device/fairphone/FP2/ubuntu/70-FP2.rules:system/ubuntu/usr/lib/lxc-android-config/70-FP2.rules
+    #device-files/FP2/system/etc/dbus-1/system.d/ofono.conf:system/ubuntu/etc/dbus-1/system.d/ofono.conf
+    device-files/FP2/system/etc/init/adbd.conf:system/ubuntu/etc/init/adbd.conf \
+    device-files/FP2/system/etc/init/bluetooth-touch-FP2.conf:system/ubuntu/etc/init/bluetooth-touch-FP2.conf \
+		#device-files/FP2/system/etc/init/ofono.conf:system/ubuntu/etc/init/ofono.conf
+		#device-files/FP2/system/etc/ofono/phonesim.conf:system/ubuntu/etc/ofono/phonesim.conf
+    device-files/FP2/system/etc/ubuntu-touch-session.d/FP2.conf:system/ubuntu/etc/ubuntu-touch-session.d/FP2.conf \
+    device-files/FP2/system/etc/init/set-brightness-fp2.conf:system/ubuntu/etc/init/set-brightness-fp2.conf \
+    device-files/FP2/system/etc/init/ubuntu-location-service.conf:system/ubuntu/etc/init/ubuntu-location-service.conf \
+		#device-files/FP2/system/lib/systemd/system/ofono.service:system/ubuntu/lib/systemd/system/ofono.service
+    #device-files/FP2/system/lib/udev/rules.d/97-ofono.rules:system/ubuntu/lib/udev/rules.d/97-ofono.rules
+		#device-files/FP2/system/lib/udev/rules.d/97-ofono-speedup.rules:system/ubuntu/lib/udev/rules.d/97-ofono-speedup.rules
+		device-files/FP2/system/lib/udev/rules.d/99-z-video.rules:system/ubuntu/lib/udev/rules.d/99-z-video.rules \
+		device-files/FP2/system/usr/lib/lxc-android-config/70-FP2.rules:system/ubuntu/usr/lib/lxc-android-config/70-FP2.rules
 
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true
