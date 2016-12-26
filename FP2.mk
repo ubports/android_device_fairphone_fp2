@@ -1,4 +1,3 @@
-
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Audio configuration file
