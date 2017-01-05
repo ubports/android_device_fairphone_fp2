@@ -2,10 +2,10 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/audio_policy.conf:system/etc/audio_policy.conf \
-    device/fairphone/FP2/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/fairphone/FP2/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/fairphone/FP2/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
+    device/fairphone/FP2/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    device/fairphone/FP2/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/fairphone/FP2/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/fairphone/FP2/audio/mixer_paths_auxpcm.xml:system/etc/mixer_paths_auxpcm.xml
 
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/media/media_profiles_8974.xml:system/etc/media_profiles.xml \
@@ -142,13 +142,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.whitelist=/system/etc/whitelist_appops.xml
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
-
-PRODUCT_COPY_FILES += \
-    device/fairphone/FP2/whitelist_appops.xml:system/etc/whitelist_appops.xml
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer \
