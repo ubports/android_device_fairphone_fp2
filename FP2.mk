@@ -24,7 +24,9 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    tinymix
+    tinymix \
+    ip libiprouteutil \
+    iptables libiptc libext
 
 # Feature definition files for 8974
 PRODUCT_COPY_FILES += \
