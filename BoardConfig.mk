@@ -98,6 +98,9 @@ TARGET_HW_DISK_ENCRYPTION := false
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# Radio
+TARGET_RIL_VARIANT := caf
+
 # Workaround framework bluetooth dependency
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/generic/common/bluetooth
