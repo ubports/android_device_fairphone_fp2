@@ -116,6 +116,7 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/init_bt.sh:root/init_bt.sh \
     device/fairphone/FP2/rootdir/root/init.wcnss.wifi.sh:root/init.wcnss.wifi.sh \
     device/fairphone/FP2/rootdir/root/fstab.qcom:root/fstab.qcom \
+    device/fairphone/FP2/rootdir/root/recovery.fstab:recovery/root/etc/recovery.fstab \
     device/fairphone/FP2/rootdir/root/recovery.fstab:recovery/root/etc/fstab \
     device/fairphone/FP2/rootdir/root/twrp.fstab:root/twrp.fstab \
     device/fairphone/FP2/rootdir/root/init.qcom.rc:root/init.qcom.rc \
