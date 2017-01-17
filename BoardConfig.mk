@@ -99,7 +99,7 @@ TARGET_HW_DISK_ENCRYPTION := false
 TARGET_POWERHAL_VARIANT := qcom
 
 # Radio
-TARGET_RIL_VARIANT := caf
+TARGET_RIL_VARIANT := fp2
 
 # Workaround framework bluetooth dependency
 BOARD_HAVE_BLUETOOTH := true
