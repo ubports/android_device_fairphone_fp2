@@ -68,7 +68,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf
 
-PRODUCT_PACKAGES += wcnss_service
+#PRODUCT_PACKAGES += wcnss_service
 
 #ANT stack
 PRODUCT_PACKAGES += \
