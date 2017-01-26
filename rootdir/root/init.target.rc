@@ -66,37 +66,6 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
 
-#start gesture server as daemon
-#there are not mm-gesture-dameno,qrngp and qrngp in FP2, so remove them.
-#service qgesturesvr /system/bin/mm-gesture-daemon
-#    class late_start
-#    user system
-#    group system camera input graphics net_bt_stack
-#
-#service qrngd /system/bin/qrngd -f
-#    class main
-#    user root
-#    group root
-#
-#service qrngp /system/bin/qrngp
-#    class main
-#    user root
-#    group root
-#    oneshot
-#    disabled
-
-service mpdecision /system/bin/mpdecision --avg_comp
-   class main
-   user root
-   disabled
-
-service thermal-engine /system/bin/thermal-engine
-   class main
-   user root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
-   group root
 
 service time_daemon /system/bin/time_daemon
    class late_start
@@ -120,4 +89,3 @@ service init_bt /system/bin/sh /init_bt.sh
     user root
     group root
     oneshot
-
