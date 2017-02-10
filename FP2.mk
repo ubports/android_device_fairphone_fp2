@@ -136,7 +136,7 @@ PRODUCT_COPY_FILES += \
 # Configs
 PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/system/etc/usf_post_boot.sh:system/etc/usf_post_boot.sh \
-    device/fairphone/FP2/rootdir/root/init_wlan.sh:system/etc/init_wlan.sh \
+    device/fairphone/FP2/rootdir/system/etc/init_wlan_bt.sh:system/etc/init_wlan_bt.sh \
     device/fairphone/FP2/rootdir/system/etc/usf_settings.sh:system/etc/usf_settings.sh
 
 # Enable strict operation

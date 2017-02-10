@@ -346,31 +346,6 @@ on property:ro.board.platform=msm7630_fusion
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
-on property:bluetooth.isEnabled=true
-    start btwlancoex
-    write /sys/class/bluetooth/hci0/idle_timeout 7000
-
-on property:bluetooth.sap.status=running
-    start bt-sap
-
-on property:bluetooth.sap.status=stopped
-    stop bt-sap
-
-on property:bluetooth.dun.status=running
-    start bt-dun
-
-on property:bluetooth.dun.status=stopped
-    stop bt-dun
-
-on property:ro.bluetooth.ftm_enabled=true
-    start ftmd
-
-on property:bluetooth.startbtsnoop=true
-    start btsnoop
-
-on property:bluetooth.startbtsnoop=false
-    stop btsnoop
-
 service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
     class core
     user root
@@ -416,41 +391,6 @@ service rfs_access /system/bin/rfs_access
 
 on property:ro.boot.emmc=true
     start rfs_access
-
-service hciattach_ath3k /system/bin/sh /system/etc/init.ath3k.bt.sh
-     class late_start
-     user bluetooth
-     group system bluetooth net_bt_admin misc
-     disabled
-     oneshot
-
-service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
-    class late_start
-    user bluetooth
-    group bluetooth net_bt_admin inet
-    disabled
-    oneshot
-
-service bt-sap /system/bin/sapd 15
-    user bluetooth
-    group bluetooth net_bt_admin
-    class late_start
-    disabled
-    oneshot
-
-service btsnoop /system/bin/btsnoop
-   user bluetooth
-   group bluetooth net_bt_admin sdcard_rw sdcard_r
-   class late_start
-   disabled
-   oneshot
-
-service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
-    class late_start
-    user root
-    group bluetooth net_bt_admin misc net_bt_stack qcom_diag
-    disabled
-    oneshot
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
@@ -599,13 +539,6 @@ service loc_launcher /system/bin/loc_launcher
     class late_start
     group gps qcom_oncrpc inet net_raw qcom_diag net_admin wifi
 
-service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
-    class late_start
-    user root
-    group system fm_radio
-    disabled
-    oneshot
-
 on property:crypto.driver.load=1
      insmod /system/lib/modules/qce.ko
      insmod /system/lib/modules/qcedev.ko
@@ -628,19 +561,6 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
     disabled
     oneshot
 
-service wifi-sdio-on /system/bin/sh /system/etc/init.qcom.sdio.sh
-    class late_start
-    group wifi inet
-    disabled
-    oneshot
-
-service wifi-crda /system/bin/sh /system/etc/init.crda.sh
-   class late_start
-   user root
-   disabled
-   oneshot
-
-
 on property:sys.boot_completed=1
     start qcom-post-boot
 
@@ -648,6 +568,7 @@ service atfwd /system/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
+    disabled
 
 service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     class late_start
@@ -728,20 +649,6 @@ service ssr_diag /system/bin/ssr_diag
     group system
     disabled
 
-# Define fastmmi
-service fastmmi /system/bin/mmi
-    user root
-    group root
-    disabled
-
-service fastmmisrv /system/bin/sh /init.qcom.factory.sh
-    user root
-    disabled
-    oneshot
-
-on ffbm
-    start fastmmisrv
-
 service hvdcp /system/bin/hvdcp
     class core
     user root
@@ -789,11 +696,3 @@ on property:persist.sys.qlogd=1
     start qlogd
 on property:persist.sys.qlogd=0
     stop qlogd
-
-service rootagent /system/bin/sh /system/etc/init.qcom.rootagent.sh
-    disabled
-    oneshot
-on property:persist.sys.rootagent=1
-    start rootagent
-on property:persist.sys.rootagent=0
-    stop rootagent
