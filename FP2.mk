@@ -12,7 +12,8 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/media/media_codecs_8974.xml:system/etc/media_codecs.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ubuntu.widi.supported=1
+    ubuntu.widi.supported=1 \
+    sys.usb.config=mtp,adb
 
 PRODUCT_PACKAGES += \
     audiod \
@@ -142,7 +143,7 @@ PRODUCT_COPY_FILES += \
 # Enable strict operation
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.strict_op_enable=false \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp,adb
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1

@@ -27,6 +27,23 @@
 #
 #
 
+# usb mode change listeners
+on property:sys.usb.config=mtp
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 2AE5
+    write /sys/class/android_usb/android0/idProduct F003
+    write /sys/class/android_usb/android0/functions mtp
+    write /sys/class/android_usb/android0/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp,adb
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 2AE5
+    write /sys/class/android_usb/android0/idProduct 9039
+    write /sys/class/android_usb/android0/functions mtp,adb
+    write /sys/class/android_usb/android0/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
 on early-init
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones
@@ -36,6 +53,9 @@ on init
     # 0 indicates that virtual display is not a Wifi display and that the
     # session is not exercised through RemoteDisplay in the android framework
     setprop persist.sys.wfd.virtual 0
+    # in ubuntu, default to mtp,adb mode for usb
+    setprop persist.sys.usb.config mtp,adb
+    setprop sys.usb.config mtp,adb
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
