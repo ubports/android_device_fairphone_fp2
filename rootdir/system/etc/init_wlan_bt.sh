@@ -10,7 +10,8 @@ enable_bt () {
         fi
 
         #initialize bt device
-        /system/bin/hci_qcomm_init -e 
+        /system/bin/hci_qcomm_init -e
+        sleep 1 
         echo 1 > /sys/module/hci_smd/parameters/hcismd_set
 
 
