@@ -1,0 +1,13 @@
+description "oFono Mobile telephony stack"
+
+start on started dbus and rild-ready
+stop on stopping dbus
+
+expect fork
+respawn
+
+env OFONO_RIL_DEVICE=ril
+env OFONO_RIL_NUM_SIM_SLOTS=1
+env OFONO_RIL_RAT_LTE=1
+
+exec ofonod -P provision,udev*,dun*,smart*,hfp_bluez5,stktest,sap
