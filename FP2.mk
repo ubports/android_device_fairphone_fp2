@@ -165,6 +165,9 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/ubuntu/config.xml:system/ubuntu/usr/share/repowerd/device-configs/config-FP2.xml \
     device/fairphone/FP2/ubuntu/ofono.override:system/ubuntu/etc/init/ofono.override
 
+#This keeps time correct across reboots
+PRODUCT_PACKAGES += timekeep
+
 # include an expanded selection of fonts for the SDK.
 EXTENDED_FONT_FOOTPRINT := true
 
