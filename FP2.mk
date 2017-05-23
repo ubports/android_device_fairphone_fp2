@@ -163,7 +163,10 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/ubuntu/ubuntu-location-service.conf:system/ubuntu/etc/ubuntu-location-service.conf \
     device/fairphone/FP2/ubuntu/70-FP2.rules:system/ubuntu/usr/lib/lxc-android-config/70-FP2.rules \
     device/fairphone/FP2/ubuntu/config.xml:system/ubuntu/usr/share/repowerd/device-configs/config-FP2.xml \
-    device/fairphone/FP2/ubuntu/ofono.override:system/ubuntu/etc/init/ofono.override
+    device/fairphone/FP2/ubuntu/ofono.override:system/ubuntu/etc/init/ofono.override \
+    device/fairphone/FP2/audio/mixer_paths.xml:system/ubuntu/etc/mixer_paths.xml \
+    device/fairphone/FP2/audio/mixer_paths_auxpcm.xml:system/ubuntu/etc/mixer_paths_auxpcm.xml
+
 
 #This keeps time correct across reboots
 PRODUCT_PACKAGES += timekeep
