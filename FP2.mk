@@ -165,7 +165,9 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/ubuntu/config.xml:system/ubuntu/usr/share/repowerd/device-configs/config-FP2.xml \
     device/fairphone/FP2/ubuntu/ofono.override:system/ubuntu/etc/init/ofono.override \
     device/fairphone/FP2/audio/mixer_paths.xml:system/ubuntu/etc/mixer_paths.xml \
-    device/fairphone/FP2/audio/mixer_paths_auxpcm.xml:system/ubuntu/etc/mixer_paths_auxpcm.xml
+    device/fairphone/FP2/audio/mixer_paths_auxpcm.xml:system/ubuntu/etc/mixer_paths_auxpcm.xml \
+    device/fairphone/FP2/ubuntu/android.conf:system/ubuntu/etc/ubuntu-touch-session.d/android.conf \
+    device/fairphone/FP2/ubuntu/android.conf:system/ubuntu/etc/ubuntu-touch-session.d/FP2.conf
 
 
 #This keeps time correct across reboots
