@@ -110,3 +110,6 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 #TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 
 TARGET_LDPRELOAD := libNimsWrap.so
+
+# Workaround for unknown screen physical size in the kernel.
+TARGET_USES_SF_LCD_DENSITY_DPI := true
