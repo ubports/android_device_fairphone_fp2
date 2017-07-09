@@ -110,7 +110,21 @@ on boot
     chmod 0777 /sys/class/power_supply/battery/input_current_max
     chmod 0777 /sys/class/power_supply/battery/input_current_trim
     chmod 0777 /sys/class/power_supply/battery/voltage_min
-
+    
+    # Leds
+    chmod 0666 /sys/class/timed_output/vibrator/enable
+    chmod 0666 /sys/class/leds/keyboard-backlight/brightness
+    chmod 0666 /sys/class/leds/lcd-backlight/brightness
+    chmod 0666 /sys/class/leds/button-backlight/brightness
+    chmod 0666 /sys/class/leds/jogball-backlight/brightness
+    chmod 0666 /sys/class/leds/red/brightness
+    chmod 0666 /sys/class/leds/green/brightness
+    chmod 0666 /sys/class/leds/blue/brightness
+    chmod 0666 /sys/class/leds/red/blink
+    chmod 0666 /sys/class/leds/green/blink
+    chmod 0666 /sys/class/leds/blue/blink
+    chmod 0666 /sys/class/leds/led\:flash_torch/brightness
+    
     # sensor service
     mkdir /data/misc/sensors 0755 root system
     chmod 2755 /data/misc/sensors
