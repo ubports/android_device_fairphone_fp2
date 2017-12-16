@@ -81,10 +81,11 @@ on boot
     chmod 770  /persist/sns.reg
 
 #start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /system/ext/mm-qcamera-daemon.wrapper
     class late_start
     user camera
     group camera system inet input graphics
+    disabled
 
 service mpdecision /system/bin/mpdecision --avg_comp
    class main

@@ -577,6 +577,8 @@ service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
 
 on property:sys.boot_completed=1
     start qcom-post-boot
+    start qcamerasvr
+    start media
 
 service atfwd /system/bin/ATFWD-daemon
     class late_start
