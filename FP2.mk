@@ -132,7 +132,8 @@ PRODUCT_COPY_FILES += \
     device/fairphone/FP2/rootdir/root/init.target.rc:root/init.target.rc \
     device/fairphone/FP2/rootdir/root/init.qcom.usb.rc:root/init.qcom.usb.rc \
     device/fairphone/FP2/rootdir/root/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    device/fairphone/FP2/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc
+    device/fairphone/FP2/rootdir/root/ueventd.qcom.rc:root/ueventd.qcom.rc \
+    device/fairphone/FP2/rootdir/root/init.rc:root/init.rc
 
 # Configs
 PRODUCT_COPY_FILES += \
