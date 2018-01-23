@@ -101,6 +101,10 @@ on boot
     chmod 2770 /data/system/perfd
     mkdir /persist/drm 0770 system system
 
+    # Temporary Fix for Timekeep FP2
+     mkdir /data/time
+     chmod 777 /data/time
+
     # charger
     chown root system /sys/module/qpnp_charger/parameters/charger_monitor
     chown root system /sys/class/power_supply/battery/input_current_max
@@ -110,7 +114,7 @@ on boot
     chmod 0777 /sys/class/power_supply/battery/input_current_max
     chmod 0777 /sys/class/power_supply/battery/input_current_trim
     chmod 0777 /sys/class/power_supply/battery/voltage_min
-    
+
     # Leds
     chmod 0666 /sys/class/timed_output/vibrator/enable
     chmod 0666 /sys/class/leds/keyboard-backlight/brightness
@@ -124,7 +128,7 @@ on boot
     chmod 0666 /sys/class/leds/green/blink
     chmod 0666 /sys/class/leds/blue/blink
     chmod 0666 /sys/class/leds/led\:flash_torch/brightness
-    
+
     # sensor service
     mkdir /data/misc/sensors 0755 root system
     chmod 2755 /data/misc/sensors
