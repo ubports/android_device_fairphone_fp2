@@ -144,3 +144,6 @@ audio.offload.gapless.enabled=false
 
 #enable dsds
 persist.radio.multisim.config=dsds
+
+# UT: set scale factor to be in line with other similarly sized devices
+ro.sf.lcd_density=480
